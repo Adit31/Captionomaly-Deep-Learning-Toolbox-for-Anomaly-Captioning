@@ -10,7 +10,7 @@ from pprint import pprint
 n_y = 300
 UCFCVD_PATH = None
 UCFCVD_GT_PATH = None
-max_epochs = 1400
+max_epochs = 1000
 lr = 0.0002
 rate = 0.5
 batch_size = 64
