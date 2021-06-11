@@ -8,9 +8,7 @@ ucfcvd_tag_feats = ['/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e100_ta
                     '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e200_tag_feats.npy',
                     '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e400_tag_feats.npy',
                     '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e800_tag_feats.npy',
-                    '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e1000_tag_feats.npy',
-                    '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e1200_tag_feats.npy',
-                    '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e1400_tag_feats.npy']
+                    '/storage/users/multicog/Adit/UCFC-VD_Tagging/ucfcvd_e1000_tag_feats.npy']
 
 ucfcvd_res = {}
 label = np.load(ucfcvd_gt)
