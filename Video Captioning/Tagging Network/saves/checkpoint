@@ -1,0 +1,6 @@
+model_checkpoint_path: "ucfcvd_tag_model_1000_resnext.ckpt"
+all_model_checkpoint_paths: "ucfcvd_tag_model_100_resnext.ckpt"
+all_model_checkpoint_paths: "ucfcvd_tag_model_200_resnext.ckpt"
+all_model_checkpoint_paths: "ucfcvd_tag_model_400_resnext.ckpt"
+all_model_checkpoint_paths: "ucfcvd_tag_model_800_resnext.ckpt"
+all_model_checkpoint_paths: "ucfcvd_tag_model_1000_resnext.ckpt"
