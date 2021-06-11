@@ -11,7 +11,7 @@ def main():
         config.gpu_options.allow_growth = True
         sess = tf.Session(config=config, graph=tagnet.graph)
         saver = tf.train.Saver()
-        saver.restore(sess, './saves/ucfcvd_tag_model_1400_resnext.ckpt')
+        saver.restore(sess, './saves/ucfcvd_tag_model_1000_resnext.ckpt')
 
         data = np.load('/storage/users/multicog/Adit/UCFC-VD_Data_Prep/Files/Scaled_ResNeXt.npy')
         
@@ -25,7 +25,7 @@ def main():
             res = sess.run(wanted_ops, feed_dict)   
             semantic[idx*batch_size:(idx+1)*batch_size] = res[0]
 
-        np.save('ucfcvd_e1400_tag_feats', semantic)
+        np.save('ucfcvd_e1000_tag_feats', semantic)
 
 
 if __name__ == "__main__":
