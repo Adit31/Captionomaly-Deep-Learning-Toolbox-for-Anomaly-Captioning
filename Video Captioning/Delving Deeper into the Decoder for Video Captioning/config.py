@@ -19,7 +19,7 @@ class Config():
         self._train_size2 = 817        #Number of Videos for Training (Second phase of training)
         self._val_size = 57            #Number of Videos for Validation
         self._test_size = 76           #Number of Videos for Testing
-        self._epoch = 75               #Total Number of Epochs
+        self._epoch = 55               #Total Number of Epochs
         self._threshold = 32           #Number of Epochs for the First Phase
         self._max_steps = 20
         self._batch_size = 128         #Batch Size
