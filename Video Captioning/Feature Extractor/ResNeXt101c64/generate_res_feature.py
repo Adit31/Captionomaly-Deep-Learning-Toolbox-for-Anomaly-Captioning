@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-"""This is the script used to generate MSR-VTT features"""
+"""This is the script used to generate UCFC-VD features"""
 
 import cv2
 import numpy as np
@@ -65,16 +65,8 @@ def generate_feat(inputx, model, out_feats, sess):
     
     resnet = resnet.reshape(1, 950, 32, 2048, 1)
     model = Sequential([AveragePooling3D(pool_size = (1, 32, 1))])
-    output = model.predict(resnet)
-    output = np.squeeze(output)
-    
-#     resnet_avg = np.zeros((950, 2048))
-#     for i in range(0, 950):
-#         avg = 0
-#         for j in range(0, 32):
-#             avg = avg + res_feats[i][j]
-#         avg = avg/32
-#         resnet_avg[i] = avg
+    resnet_avg = model.predict(resnet)
+    resnet_avg = np.squeeze(output)
         
     min_max_scaler = preprocessing.MinMaxScaler()
     scaled_resnet = min_max_scaler.fit_transform(resnet_avg)
