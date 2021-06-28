@@ -63,9 +63,9 @@ def generate_feat(inputx, model, out_feats, sess):
         print(idx, 'video has been processed.')
     np.save(flags.output, res_feats)
     
-    resnet = resnet.reshape(1, 950, 32, 2048, 1)
+    res_feats = res_feats.reshape(1, 950, 32, 2048, 1)
     model = Sequential([AveragePooling3D(pool_size = (1, 32, 1))])
-    resnet_avg = model.predict(resnet)
+    resnet_avg = model.predict(res_feats)
     resnet_avg = np.squeeze(output)
         
     min_max_scaler = preprocessing.MinMaxScaler()
