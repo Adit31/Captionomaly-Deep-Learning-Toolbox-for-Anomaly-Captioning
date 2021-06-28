@@ -20,7 +20,7 @@ def main():
         for idx in range(1000):
             wanted_ops = [tagnet.pred]
             feed_dict = {tagnet.z: data[idx*batch_size:(idx+1)*batch_size], 
-                         tagnet.rate: 0}
+                         tagnet.rate: 1}
 
             res = sess.run(wanted_ops, feed_dict)   
             semantic[idx*batch_size:(idx+1)*batch_size] = res[0]
