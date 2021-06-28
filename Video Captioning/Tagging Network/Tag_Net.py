@@ -2,7 +2,7 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 #import tensorflow as tf
 from tensorflow.compat.v1 import placeholder, glorot_normal_initializer, zeros_initializer
-from tensorflow.nn import dropout
+from tensorflow.compat.v1.nn import dropout
 import numpy as np
 
 n_z = 2048
