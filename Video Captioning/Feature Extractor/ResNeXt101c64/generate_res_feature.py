@@ -1,4 +1,7 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
+# Author: Adit Goyal
+# Date: 2021-06-18
+
 """This is the script used to generate UCFC-VD features"""
 
 import cv2
