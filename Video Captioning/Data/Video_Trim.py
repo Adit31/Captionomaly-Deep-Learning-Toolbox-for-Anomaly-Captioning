@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Author: Adit Goyal
+# Date: 2021-06-18
+
 from moviepy.editor import VideoFileClip
 
 #Path of the video file to be trimmed
