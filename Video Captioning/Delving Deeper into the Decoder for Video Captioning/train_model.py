@@ -258,6 +258,37 @@ def cal_metrics(sess, phase):
 
     return scores, mean_loss
 
+def demo_test(sess):
+    sent_dict, sent_list = defaultdict(list), []
+    tag_feat = data_dict['tag_feat']
+    res_feat = data_dict['res_feat']
+    idx2gts = data_dict['idx2gts']
+    
+    for idx in range(0, tag_feat.shape[0]):
+        tag, ervid = tag_feat[idx], res_feat[idx]
+        tag, ervid = np.expand_dims(tag, 0), np.expand_dims(ervid, 0)
+        gts = idx2gts[idx]
+        if len(gts) == 0:
+            gts = ["this is a sample", "this is a sample", "this is a sample", 
+                   "this is a sample", "this is a sample"]
+        maxlen = max([len(gt) for gt in gts])
+        gts_mat = np.zeros((maxlen, len(gts)), dtype=np.int32)
+        for idx2, gt in enumerate(gts):
+            gts_mat[:len(gt), idx2] = gt
+
+        wanted_ops = {'generated_words': model.generated_words}
+        feed_dict = {model.word_idx: gts_mat, model.vid_inputs: ervid, model.se_inputs: tag}
+        res = sess.run(wanted_ops, feed_dict)
+        generated_words = res['generated_words']
+        for x in np.squeeze(generated_words):
+            if x == 0:
+                break
+            sent_dict[idx].append(data_dict['idx2word'][x])
+        sent_dict[idx] = [' '.join(sent_dict[idx])]
+        sent_list.append(sent_dict[idx][0])
+    with open("demo_test.log", 'w') as fo:
+        for sent in sent_list:
+            fo.write(sent+'\n')
 
 def main():
     global data_dict, model, options
@@ -308,9 +339,12 @@ def main():
             cal_metrics(sess, 'test')
         else:
             saver.restore(sess, flags.test)
-            cal_metrics(sess, 'train')
-            cal_metrics(sess, 'val')
-            cal_metrics(sess, 'test')
+            if flags.demo == True:
+                demo_test(sess)
+            else:
+                cal_metrics(sess, 'train')
+                cal_metrics(sess, 'val')
+                cal_metrics(sess, 'test')
         sess.close()
 
 
@@ -322,6 +356,7 @@ if __name__ == "__main__":
     tf.compat.v1.app.flags.DEFINE_string('tag', None, 'Path to Tag feature files')
     tf.compat.v1.app.flags.DEFINE_string('ref', None, 'Path to reference files')
     tf.compat.v1.app.flags.DEFINE_string('test', None, 'Path to the saved parameters')
+    tf.compat.v1.app.flags.DEFINE_string('demo', None, 'True or False: To test the model on individual samples')
 
     flags = tf.compat.v1.app.flags.FLAGS
 
