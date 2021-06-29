@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# Author: Adit Goyal
+# Date: 2021-06-18
+
 import tensorflow as tf
 import os
 import numpy as np
