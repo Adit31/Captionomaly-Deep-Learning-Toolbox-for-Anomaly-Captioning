@@ -69,7 +69,7 @@ def generate_feat(inputx, model, out_feats, sess):
     res_feats = res_feats.reshape(1, 950, 32, 2048, 1)
     model = Sequential([AveragePooling3D(pool_size = (1, 32, 1))])
     resnet_avg = model.predict(res_feats)
-    resnet_avg = np.squeeze(output)
+    resnet_avg = np.squeeze(resnet_avg)
         
     min_max_scaler = preprocessing.MinMaxScaler()
     scaled_resnet = min_max_scaler.fit_transform(resnet_avg)
