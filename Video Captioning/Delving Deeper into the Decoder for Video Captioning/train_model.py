@@ -268,9 +268,10 @@ def demo_test(sess):
         tag, ervid = tag_feat[idx], res_feat[idx]
         tag, ervid = np.expand_dims(tag, 0), np.expand_dims(ervid, 0)
         gts = idx2gts[idx]
-        if len(gts) == 0:
-            gts = ["this is a sample", "this is a sample", "this is a sample", 
-                   "this is a sample", "this is a sample"]
+        if len(gts) == 0: #Only for representation purposes
+           gts = [[2, 855, 1462, 1271, 1288, 583, 2, 1571, 0], [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 
+                   [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]]
+
         maxlen = max([len(gt) for gt in gts])
         gts_mat = np.zeros((maxlen, len(gts)), dtype=np.int32)
         for idx2, gt in enumerate(gts):
@@ -339,7 +340,7 @@ def main():
             cal_metrics(sess, 'test')
         else:
             saver.restore(sess, flags.test)
-            if flags.demo == True:
+            if flags.demo == 'True':
                 demo_test(sess)
             else:
                 cal_metrics(sess, 'train')
