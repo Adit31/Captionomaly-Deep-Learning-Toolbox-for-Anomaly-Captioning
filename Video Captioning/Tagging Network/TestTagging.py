@@ -16,8 +16,9 @@ def main():
         data = np.load('/storage/users/multicog/Adit/UCFC-VD_Data_Prep/Files/Scaled_ResNeXt.npy')
         
         batch_size = 10
-        semantic = np.zeros([950, 300], np.float32)
-        for idx in range(1000):
+        no_of_videos = 950
+        semantic = np.zeros([no_of_videos, 300], np.float32)
+        for idx in range(95):
             wanted_ops = [tagnet.pred]
             feed_dict = {tagnet.z: data[idx*batch_size:(idx+1)*batch_size], 
                          tagnet.rate: 1}
