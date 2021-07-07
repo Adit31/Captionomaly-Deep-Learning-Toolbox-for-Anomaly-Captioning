@@ -29,6 +29,7 @@ tf.compat.v1.disable_eager_execution()
 batch_size = 32
 seg_size = 32
 dims = [batch_size, 224, 224, 3]
+no_of_videos = 950
 global flags
 
 
@@ -41,7 +42,7 @@ def generate_feat(inputx, model, out_feats, sess):
     global flags
     seg_name = os.path.basename(flags.input)
     vid_names = glob.glob(os.path.join(flags.input, '*'))
-    res_feats = np.zeros([950, seg_size, 2048], np.float32)
+    res_feats = np.zeros([no_of_videos, seg_size, 2048], np.float32)
     # Read seg_size pictures evenly for each video, and process one video as a batch
     for idx, vid_n in enumerate(vid_names):
         # Read in all the picture names of the video and select seg_size pictures evenly
@@ -66,13 +67,14 @@ def generate_feat(inputx, model, out_feats, sess):
         print(idx, 'video has been processed.')
     np.save(flags.output, res_feats)
     
-    res_feats = res_feats.reshape(1, 950, 32, 2048, 1)
+    res_feats = res_feats.reshape(1, no_of_videos, 32, 2048, 1)
     model = Sequential([AveragePooling3D(pool_size = (1, 32, 1))])
     resnet_avg = model.predict(res_feats)
     resnet_avg = np.squeeze(resnet_avg)
         
     min_max_scaler = preprocessing.MinMaxScaler()
-    scaled_resnet = min_max_scaler.fit_transform(resnet_avg)
+    scaled_resnet = min_max_scaler.fit_transform(resnet_avg.reshape(-1,no_of_videos))
+    scaled_resnet = scaled_resnet.reshape(no_of_videos,-1))
     np.save(flags.scaled_output, scaled_resnet)
 
 
