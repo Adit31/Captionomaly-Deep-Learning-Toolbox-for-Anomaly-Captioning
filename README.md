@@ -50,6 +50,11 @@ To test the code on individual samples using the weights from the pre-trained mo
 
 ---
 
+### <a name = "Data"> </a> Data
+The dataset download links for the models are given in their respective directories.
+
+---
+
 ### <a name = "Citation"> </a> Citation
 ```
 @article{adit2021captionomaly,
