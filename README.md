@@ -11,7 +11,7 @@ The major contributions of our work are:
 2. We propose a framework for anomaly detection and video captioning that works efficiently with very small amount of inputs.
 3. The framework introduced here can be used as a toolbox to completely automate the process of surveillance of video footage and report any anomaly to the user.
 
-![Caption Result](./Video-Captioning/Delving-Deeper-into-the-Decoder-for-Video-Captioning/Results/captionresult-(1).pdf)
+![Caption Result](./Video-Captioning/Delving-Deeper-into-the-Decoder-for-Video-Captioning/Results/captionresult (1).pdf)
 
 ---
 
