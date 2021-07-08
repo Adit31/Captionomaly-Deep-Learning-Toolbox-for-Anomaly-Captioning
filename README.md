@@ -1,12 +1,24 @@
 ## Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos
 
+### <a name = "Description"> </a> Description
+This repository is the source code for the paper "Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos". 
 
-### Requirements
+**Abstract:** Video stream monitoring and reporting can be a tedious task if one has to go through several hours of clippings on a daily basis. It also leaves room for errors because of the repetitive nature of the task. In this paper, we provide a tool with the aim of automating the process of anomaly detection and reporting. We combine the results of anomaly detection and video captioning models in our application, and introduce a new dataset specific for training the models to be used for surveillance purposes. The anomaly detection framework is trained on the UCF-Crime dataset, and the captioning model is trained on a new dataset we introduced, called UCFC-VD. This tool will be the first of its kind combining the two frameworks for performing the task of video surveillance and reporting efficiently.
+
+The major contributions of our work are:
+
+1. We introduce a new dataset called UCFC-VD (UCF-Crime Video Description) for anomaly captioning purposes.
+2. We propose a framework for anomaly detection and video captioning that works efficiently with very small amount of inputs.
+3. The framework introduced here can be used as a toolbox to completely automate the process of surveillance of video footage and report any anomaly to the user.
+
+---
+
+### <a name = "Requirements"> </a> Requirements
 The individual requirements for both the models are given in the respective directories
 
 ---
 
-### Testing
+### <a name = "Testing"> </a> Testing
 
 To test the code on individual samples using the weights from the pre-trained model:
 
@@ -21,7 +33,7 @@ To test the code on individual samples using the weights from the pre-trained mo
 
 ---
 
-### Training
+### <a name = "Training"> </a>Training
 ###### Anomaly Detection 
 [Real-World Anomaly Detection in Surveillance Videos](https://github.com/WaqasSultani/AnomalyDetectionCVPR2018)
 
@@ -35,3 +47,7 @@ To test the code on individual samples using the weights from the pre-trained mo
 4. Test the tagging network to generate a .npy file using [TestTagging.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Tagging%20Network/TestTagging.py).
 6. Adjust the configurations for the Captioning model in [config.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Delving%20Deeper%20into%20the%20Decoder%20for%20Video%20Captioning/config.py), and train the Captioning model using [run_model.sh](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Delving%20Deeper%20into%20the%20Decoder%20for%20Video%20Captioning/run_model.sh).
 7. Check the results the train and test log files.
+
+---
+
+### <a name = "Citation"> </a> Citation
