@@ -29,3 +29,13 @@ To test the code on individual samples using the weights from the pre-trained mo
 8. Check the generated caption in the demo log file.
 
 ### Training
+###### Anomaly Detection 
+[Real-World Anomaly Detection in Surveillance Videos](https://github.com/WaqasSultani/AnomalyDetectionCVPR2018)
+
+###### Video Captioning
+1. Prepare the Corpus, Reference, Vocabulary and Tagging files using the scripts given [here](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/tree/main/Video%20Captioning/Data%20Preparation/Scripts).
+2. Extract ResNeXt features of all the videos in a single .npy file using [Prepare_frames.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Feature%20Extractor/Prepare_frames.py) and [generate_res_feature.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Feature%20Extractor/generate_res_feature.py).
+3. Train the tagging network using [TrainTagNet.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Tagging%20Network/TrainTagNet.py).
+4. Test the tagging network to generate a .npy file using [TestTagging.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Tagging%20Network/TestTagging.py).
+6. Adjust the configurations for the Captioning model in [config.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Delving%20Deeper%20into%20the%20Decoder%20for%20Video%20Captioning/config.py), and train the Captioning model using [run_model.sh](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Delving%20Deeper%20into%20the%20Decoder%20for%20Video%20Captioning/run_model.sh).
+7. Check the results the train and test log files.
