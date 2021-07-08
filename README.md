@@ -51,3 +51,10 @@ To test the code on individual samples using the weights from the pre-trained mo
 ---
 
 ### <a name = "Citation"> </a> Citation
+```
+@article{adit2021captionomaly,
+  author = {},
+  title = {},
+  year = {}
+}
+```
