@@ -1,4 +1,4 @@
-# Anomaly-Detection-and-Captioning
+# Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos
 
 ### Requirements
 python 3.6.9
@@ -33,6 +33,9 @@ To test the code on individual samples using the weights from the pre-trained mo
 [Real-World Anomaly Detection in Surveillance Videos](https://github.com/WaqasSultani/AnomalyDetectionCVPR2018)
 
 ###### Video Captioning
+[Delving Deeper into the Decoder for Video Captioning](https://github.com/WingsBrokenAngel/delving-deeper-into-the-decoder-for-video-captioning#requirement)
+
+
 1. Prepare the Corpus, Reference, Vocabulary and Tagging files using the scripts given [here](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/tree/main/Video%20Captioning/Data%20Preparation/Scripts).
 2. Extract ResNeXt features of all the videos in a single .npy file using [Prepare_frames.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Feature%20Extractor/Prepare_frames.py) and [generate_res_feature.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Feature%20Extractor/generate_res_feature.py).
 3. Train the tagging network using [TrainTagNet.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Tagging%20Network/TrainTagNet.py).
