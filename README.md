@@ -1,5 +1,6 @@
 # Anomaly-Detection-and-Captioning
 
+### Requirements
 python 3.6.9
 
 tensorflow 2.1.3
@@ -14,6 +15,8 @@ keras 2.3.1
 
 pycocoevalcap
 
+### Testing
+
 To test the code on individual samples using the weights from the pre-trained model:
 
 1. Extract [C3D features](https://github.com/facebookarchive/C3D) using the given [script](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Anomaly%20Detection/Feature%20Extractor/Feature_Extractor.ipynb) (Ensure dimensions of 240x320 pixels and frame rate of 30 fps).
@@ -24,3 +27,5 @@ To test the code on individual samples using the weights from the pre-trained mo
 6. Use the .npy file generated above to get the tagging vector using [TestTagging.py](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Tagging%20Network/TestTagging.py).
 7. Use the .npy files for ResNext features and Tagging network in the [run_model.sh](https://github.com/Adit31/Anomaly-Detection-and-Video-Captioning/blob/main/Video%20Captioning/Delving%20Deeper%20into%20the%20Decoder%20for%20Video%20Captioning/run_model.sh).
 8. Check the generated caption in the demo log file.
+
+### Training
