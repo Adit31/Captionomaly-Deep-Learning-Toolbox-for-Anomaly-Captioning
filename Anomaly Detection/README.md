@@ -4,3 +4,5 @@ C3D Feature Extractor mentioned above has some packages that have been deprecate
 3. Anomaly Detection: https://github.com/WaqasSultani/AnomalyDetectionCVPR2018
 
 Use 'Save_Anomaly_Clips.py' for getting the clipped videos around the anomalous segments that can also be used for the subsequent captioning model.
+
+Replace 'Test_Anomaly_Detector_public.py' in the folder with the corresponding file given here.
