@@ -1,4 +1,4 @@
-# Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos
+## Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos
 
 ### Requirements
 python 3.6.9
