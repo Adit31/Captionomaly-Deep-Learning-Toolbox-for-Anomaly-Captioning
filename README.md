@@ -1,4 +1,4 @@
-## Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos
+## Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Social Surveillance Systems
 
 ### <a name = "Description"> </a> Description
 This repository is the source code for the paper "Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos". 
@@ -59,10 +59,10 @@ The dataset download links for the models are given in their respective director
 
 ### <a name = "Citation"> </a> Citation
 ```
-@article{adit2021captionomaly,
-  author = {Goyal, Adit and Mandal, Murari and Hassija, Vikas},
-  title = {Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos},
-  year = {2021},
+@article{adit2022captionomaly,
+  author = {Goyal, Adit and Mandal, Murari and Hassija, Vikas and Chamola, Vinay and Aloqaily, Moayad},
+  title = {Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Social Surveillance Systems},
+  year = {2022},
   journal = {IEEE Transactions on Computational Social Systems}
 }
 ```
