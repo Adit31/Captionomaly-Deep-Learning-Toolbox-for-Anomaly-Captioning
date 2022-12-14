@@ -63,7 +63,6 @@ The dataset download links for the models are given in their respective director
   author = {Goyal, Adit and Mandal, Murari and Hassija, Vikas},
   title = {Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Surveillance Videos},
   year = {2021},
-  journal = {},
-  publisher = {},
+  journal = {IEEE Transactions on Computational Social Systems}
 }
 ```
