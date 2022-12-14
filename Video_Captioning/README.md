@@ -1,7 +1,5 @@
 #### Google Drive Link for Datasets:
-
-1. [UCF-Crime Anomaly](https://drive.google.com/drive/folders/1tkutYGnjemEUOUKePTgm3XA7zd6YXOYR?usp=sharing)
-2. [UCFC-VD](https://drive.google.com/drive/folders/1Cfng833veRi_PainJf_AsMCo-cu8O9R7?usp=sharing)
+[UCFC-VD](https://drive.google.com/drive/folders/1jFpJueTevUFfHbqHeMoqGRDTeQ2yUKZO?usp=sharing)
 
 #### Requirements
 python 3.6
