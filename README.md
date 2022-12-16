@@ -60,7 +60,7 @@ The dataset download links for the models are given in their respective director
 ### <a name = "Citation"> </a> Citation
 ```
 @article{adit2022captionomaly,
-  author = {Goyal, Adit and Mandal, Murari and Hassija, Vikas and Chamola, Vinay and Aloqaily, Moayad},
+  author = {Goyal, Adit and Mandal, Murari and Hassija, Vikas and Aloqaily, Moayad and Chamola, Vinay},
   title = {Captionomaly: A Deep Learning Toolbox for Anomaly Captioning in Social Surveillance Systems},
   year = {2022},
   journal = {IEEE Transactions on Computational Social Systems}
