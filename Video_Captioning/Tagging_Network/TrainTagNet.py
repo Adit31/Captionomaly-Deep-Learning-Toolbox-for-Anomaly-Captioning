@@ -27,19 +27,26 @@ def main():
     
     train_num, test_num = len(indices_train), test_x.shape[0]
 
+
     tag_net = TagNet()
     with tag_net.graph.as_default():
         global_step = tf.train.get_or_create_global_step()
         optimizer = tf.train.AdamOptimizer(lr)
         train_op = optimizer.minimize(tag_net.cost, global_step)
         saver = tf.train.Saver(max_to_keep=100)
+
+
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(graph=tag_net.graph, config=config)
+
     with tag_net.graph.as_default():
         sess.run(tf.global_variables_initializer())
+
     cost_list, acc_list = [], []
     bad_cnt = 0
+
+
     for eidx in range(max_epochs):
         residual = train_num % batch_size
         np.random.shuffle(indices_train)
@@ -66,6 +73,7 @@ def main():
             print(p, 'has been saved.')
 
         residual, costs, accs = test_num % batch_size, 0., 0.
+        
         for idx in range(test_num // batch_size):
             ret = test_step(test_x, test_y, idx, batch_size, tag_net, wanted_ops[:-1], sess)
             costs, accs = costs + ret[0], accs + ret[1]

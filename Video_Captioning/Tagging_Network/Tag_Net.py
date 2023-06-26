@@ -18,8 +18,10 @@ batch_size = 64
 
 
 class TagNet():
+
     def __init__(self):
         self.graph = tf.Graph()
+        
         with self.graph.as_default():
             self.y = placeholder(tf.float32, [None, n_y])
             self.z = placeholder(tf.float32, [None, n_z])

@@ -24,7 +24,9 @@ from sklearn import preprocessing
 from keras.models import Sequential
 from keras.layers import AveragePooling3D
 
+
 tf.compat.v1.disable_eager_execution()
+
 
 batch_size = 32
 seg_size = 32
@@ -34,16 +36,20 @@ global flags
 
 
 def generate_feat(inputx, model, out_feats, sess):
+
     """Use the imgload that comes with the model to read the image of each video
     Then use the model to process these images to get the output characteristics
     Finally save these features as a file in npy format
     """
     # Import video list
+
     global flags
+
     seg_name = os.path.basename(flags.input)
     vid_names = glob.glob(os.path.join(flags.input, '*'))
     res_feats = np.zeros([no_of_videos, seg_size, 2048], np.float32)
     # Read seg_size pictures evenly for each video, and process one video as a batch
+
     for idx, vid_n in enumerate(vid_names):
         # Read in all the picture names of the video and select seg_size pictures evenly
         input_imgs = np.zeros(shape=dims, dtype=np.float32)
@@ -56,6 +62,7 @@ def generate_feat(inputx, model, out_feats, sess):
         idx_list = [int(i*delta) for i in range(seg_size)]
         print(idx, vid_n, frm_len, max(idx_list))
         # Use load_img to read the images in the list, and model.preprocess for preprocessing
+        
         for idx2, idx3 in enumerate(idx_list):
             img_path = fpaths[idx3]
             img = load_img(img_path, target_size=256, crop_size=224)
@@ -81,12 +88,18 @@ def generate_feat(inputx, model, out_feats, sess):
 
 if __name__ == "__main__":
     global flags
+
+
     #Directory address to read the frames
     tf.app.flags.DEFINE_string('input', '/home/users/multicog/Adit/Anomaly_temp/Frames', 'input path')  
+
+
     #Address where npy file has to be saved 
     tf.app.flags.DEFINE_string('output', '/home/users/multicog/Adit/ResnetFeatures/ResNeXt', 'output path')  
     tf.app.flags.DEFINE_string('scaled_output', '/home/users/multicog/Adit/ResnetFeatures/Scaled_ResNeXt', 'scaled output path')
     flags = tf.app.flags.FLAGS
+
+
     # Model file
     inputx = tf.placeholder(tf.float32, [None, 224, 224, 3])
     model = nets.ResNeXt101c64(inputx, is_training=False)
@@ -96,5 +109,7 @@ if __name__ == "__main__":
     sess = tf.Session(config=config)
     sess.run(tf.global_variables_initializer())
     sess.run(model.pretrained())
+
+
     # Feature
     generate_feat(inputx, model, out_feats, sess)
